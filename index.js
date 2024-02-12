@@ -1,54 +1,87 @@
-require('dotenv').config();
-console.log(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL); // Должен вывести ваш email сервисного аккаунта
-
-const express = require('express');
-const bodyParser = require('body-parser');
-const { GoogleSpreadsheet } = require('google-spreadsheet');
-const { google } = require('googleapis');
+const express = require("express");
+const bodyParser = require("body-parser");
+const { google } = require("googleapis");
+require("dotenv").config();
 
 const app = express();
 app.use(bodyParser.json());
 
-// Функция для настройки и работы с Google Sheets
-async function configureGoogleSheets() {
+// Функция для добавления данных в Google Sheets
+async function addFormDataToSheet(formData) {
     try {
-        const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID);
+        // Создаем аутентификацию
+        const auth = new google.auth.GoogleAuth({
+            keyFile: "credentials.json", // Указываем путь к файлу с учетными данными
+            scopes: "https://www.googleapis.com/auth/spreadsheets", // Указываем требуемые разрешения для доступа к Google Sheets API
+        });
 
-        // Подготовка учетных данных сервисного аккаунта
-        const creds = {
-            client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-            private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-        };
+        // Получаем клиентский объект для аутентификации
+        const client = await auth.getClient();
 
-        // Аутентификация
-        await doc.useServiceAccountAuth(creds);
+        // Создаем экземпляр Google Sheets API
+        const googleSheets = google.sheets({ version: "v4", auth: client });
 
-        await doc.loadInfo(); // Загрузка информации о таблице
-        console.log(doc.title); // Вывод названия документа для проверки
-        return doc; // Возвращаем объект doc
+        // Идентификатор таблицы Google Sheets
+        const spreadsheetId = "1V-bA7G83WiiSVm3l2ZcaGZuQK74DEclLKjhpLkQIUqY";
+
+        // Добавляем данные в Google Sheets
+        await googleSheets.spreadsheets.values.append({
+            auth,
+            spreadsheetId,
+            range: "Повестка!A1:G7", // Указываем диапазон, куда будут добавлены данные
+            valueInputOption: "USER_ENTERED", // Указываем режим ввода значений
+            resource: {
+                values: [[
+                    formData.Socnetwork,
+                    formData.region,
+                    formData.url,
+                    formData.format,
+                    formData.topic,
+                    formData.title,
+                    formData.date
+                ]],
+            },
+        });
+
+        console.log('Данные успешно добавлены в Google Sheets:', formData); // Логируем успешное добавление данных
     } catch (error) {
-        console.error('Error accessing spreadsheet:', error);
-        throw error; // Пробрасываем ошибку наверх для обработки
+        console.error('Ошибка при добавлении данных в Google Sheets:', error); // Выводим ошибку в консоль
+        throw error; // Пробрасываем ошибку дальше
     }
 }
 
-// Обработчик маршрута POST для добавления данных в таблицу
+// Обработчик POST запроса на /submit
 app.post('/submit', async (req, res) => {
     try {
-        // Вызываем функцию для настройки Google Sheets
-        const doc = await configureGoogleSheets();
-        const sheet = doc.sheetsByIndex[0]; // Выбор первого листа в документе
+        // Выводим содержимое тела запроса в консоль для отладки
+        console.log('Тело запроса от Яндекс Формы:', req.body);
+
+        // Извлекаем данные из запроса от YandexForm
         const { socnetwork, region, url, format, topic, title, date } = req.body;
 
-        // Добавление строки в таблицу
-        await sheet.addRow({ Socnetwork: socnetwork, region: region, url: url, format: format, topic: topic, title: title, date: date });
+        console.log('Получены данные из запроса от Яндекс Формы:', req.body); // Логируем полученные данные
 
-        res.status(200).send('Data added to Google Sheets successfully');
+        // Подготавливаем объект с данными для добавления в Google Sheets
+        const formData = {
+            Socnetwork: socnetwork,
+            region: region,
+            url: url,
+            format: format,
+            topic: topic,
+            title: title,
+            date: date
+        };
+
+        // Добавляем данные в Google Sheets с использованием определенной выше функции
+        await addFormDataToSheet(formData);
+
+        // Отправляем успешный ответ клиенту
+        res.status(200).send('Данные успешно добавлены в Google Sheets');
     } catch (error) {
-        console.error('Error adding data to Google Sheets:', error);
-        res.status(500).send('Failed to add data to Google Sheets');
+        console.error('Не удалось добавить данные в Google Sheets:', error); // Выводим ошибку в консоль
+        res.status(500).send('Не удалось добавить данные в Google Sheets'); // Отправляем клиенту ошибку сервера
     }
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Сервер запущен на порту ${PORT}`)); // Запускаем сервер на указанном порту
