@@ -4,38 +4,39 @@ console.log(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL); // Должен выве�
 const express = require('express');
 const bodyParser = require('body-parser');
 const { GoogleSpreadsheet } = require('google-spreadsheet');
-const { JWT } = require('google-auth-library');
+const { google } = require('googleapis');
 
 const app = express();
 app.use(bodyParser.json());
 
-// Создание объекта аутентификации
-const serviceAccountAuth = new JWT({
-    email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-    key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/gm, '\n'),
-    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-});
-
-// Инициализация документа Google Sheets с аутентификацией
-const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID);
-
+// Функция для настройки и работы с Google Sheets
 async function configureGoogleSheets() {
     try {
-        // Передача аутентификации в документ
-        await doc.useServiceAccountAuth(serviceAccountAuth);
+        const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID);
+
+        // Подготовка учетных данных сервисного аккаунта
+        const creds = {
+            client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+            private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+        };
+
+        // Аутентификация
+        await doc.useServiceAccountAuth(creds);
 
         await doc.loadInfo(); // Загрузка информации о таблице
         console.log(doc.title); // Вывод названия документа для проверки
+        return doc; // Возвращаем объект doc
     } catch (error) {
         console.error('Error accessing spreadsheet:', error);
+        throw error; // Пробрасываем ошибку наверх для обработки
     }
 }
 
-configureGoogleSheets();
-
-// Обработчик для маршрута POST
+// Обработчик маршрута POST для добавления данных в таблицу
 app.post('/submit', async (req, res) => {
     try {
+        // Вызываем функцию для настройки Google Sheets
+        const doc = await configureGoogleSheets();
         const sheet = doc.sheetsByIndex[0]; // Выбор первого листа в документе
         const { socnetwork, region, url, format, topic, title, date } = req.body;
 
