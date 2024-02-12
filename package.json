@@ -1,10 +1,13 @@
 {
   "name": "YandexFormApp",
   "version": "1.0.0",
-  "main": "yes",
-  "repository": "no",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ra9220/YandexFormInt.git"
+  },
   "author": "Romarion_Romanio",
-  "license": "no",
+  "license": "",
   "private": false,
   "dependencies": {
     "dotenv": "^16.4.2",
