@@ -1,70 +1,62 @@
-// Функция для инициализации select2 с данными
-function initializeSelect2WithData(elementId, data, placeholder) {
-    // Если data - это массив строк, преобразуем его в формат объектов для select2
-    const formattedData = data.map(item => {
-        return typeof item === 'string' ? { id: item, text: item } : { id: item.id, text: item.name };
-    });
-
-    // Инициализация select2 на элементе
-    $(`#${elementId}`).select2({
-        data: formattedData,
-        placeholder: placeholder,
-        allowClear: true
-    });
-}
-
-// Функция для инициализации формы
-function initializeForm() {
+function loadData() {
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
-            initializeSelect2WithData('region', data.regions, 'Выберите регион');
-            initializeSelect2WithData('format', data.formats, 'Выберите формат');
-            initializeSelect2WithData('topic', data.topics, 'Выберите тему');
-            initializeSelect2WithData('content', data.contents, 'Выберите содержание');
+            initializeSelect('region', data.regions);
+            initializeSelect('format', data.formats);
+            initializeSelect('topic', data.topics);
+            initializeSelect('content', data.contents);
+            initializeSelect2();
         })
-        .catch(error => {
+        .catch((error) => {
             console.error('Error loading data:', error);
         });
 }
 
-// Функция для отправки формы
+function initializeSelect(elementId, items) {
+    const select = document.getElementById(elementId);
+    select.innerHTML = '';
+    select.add(new Option('Выберите...', ''));
+    items.forEach(item => {
+        select.add(new Option(item.name, item.name));
+    });
+}
+
+function initializeSelect2() {
+    $('.select2').select2({
+        placeholder: "Выберите из списка",
+        allowClear: true,
+        width: '100%'
+    });
+}
+
 function submitForm() {
-    const formData = $('#dataForm').serializeArray().reduce(function(obj, item) {
-        obj[item.name] = item.value;
-        return obj;
-    }, {});
+    const form = document.getElementById('dataForm');
+    const formData = {
+        region: form.region.value,
+        url: form.url.value,
+        format: form.format.value,
+        topic: form.topic.value,
+        date: form.date.value,
+        content: form.content.value
+    };
 
     fetch('http://92.63.178.17:3000/submit', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ params: formData }),
+        body: JSON.stringify({params: formData}),
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Server responded with status ${response.status}`);
-            }
-            return response.text();
-        })
+        .then(response => response.text())
         .then(data => {
             console.log('Success:', data);
-            alert('Данные успешно отправлены: ' + data);
+            alert('Данные успешно отправлены');
         })
         .catch((error) => {
             console.error('Error:', error);
-            alert('Ошибка при отправке данных: ' + error.message);
+            alert('Ошибка при отправке данных');
         });
 }
 
-// Обработчик события для инициализации формы после загрузки документа
-$(document).ready(function() {
-    initializeForm();
-});
-
-// Обработчик события для отправки формы
-$('#dataForm').on('submit', function(e) {
-    e.preventDefault(); // Предотвращаем стандартное поведение отправки формы
-    submitForm();
-});
+document.addEventListener('DOMContentLoaded', loadData);

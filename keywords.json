@@ -1,0 +1,784 @@
+{
+  "keywords": [
+    {
+      "keyword": "altairegion22",
+      "region": "Алтайский край"
+    },
+    {
+      "keyword": "39933875",
+      "region": "Алтайский край"
+    },
+    {
+      "keyword": "66711154",
+      "region": "Архангельская область"
+    },
+    {
+      "keyword": "arkhangelskreg",
+      "region": "Архангельская область"
+    },
+    {
+      "keyword": "27301120",
+      "region": "Астраханская область"
+    },
+    {
+      "keyword": "astrakhanobl",
+      "region": "Астраханская область"
+    },
+    {
+      "keyword": "astrakhan_governor",
+      "region": "Астраханская область"
+    },
+    {
+      "keyword": "belgorodreg",
+      "region": "Белгородская область"
+    },
+    {
+      "keyword": "96553609",
+      "region": "Белгородская область"
+    },
+    {
+      "keyword": "belgorod_region",
+      "region": "Белгородская область"
+    },
+    {
+      "keyword": "77657654",
+      "region": "Брянская область"
+    },
+    {
+      "keyword": "bryanskobl",
+      "region": "Брянская область"
+    },
+    {
+      "keyword": "bryanskoblru",
+      "region": "Брянская область"
+    },
+    {
+      "keyword": "vladimiroblast",
+      "region": "Владимирская область"
+    },
+    {
+      "keyword": "vladimir_33_region",
+      "region": "Владимирская область"
+    },
+    {
+      "keyword": "185852839",
+      "region": "Владимирская область"
+    },
+    {
+      "keyword": "217987920",
+      "region": "ДНР"
+    },
+    {
+      "keyword": "70000001507248",
+      "region": "ДНР"
+    },
+    {
+      "keyword": "officialdpr",
+      "region": "ДНР"
+    },
+    {
+      "keyword": "214495817",
+      "region": "Запорожская область"
+    },
+    {
+      "keyword": "zapadmin",
+      "region": "Запорожская область"
+    },
+    {
+      "keyword": "zaporizhiaoblast_adm",
+      "region": "Запорожская область"
+    },
+    {
+      "keyword": "55771479736496",
+      "region": "Калужская область"
+    },
+    {
+      "keyword": "184970835",
+      "region": "Калужская область"
+    },
+    {
+      "keyword": "kalugaoblgov",
+      "region": "Калужская область"
+    },
+    {
+      "keyword": "211640126",
+      "region": "Республика Кабардино-Балкария"
+    },
+    {
+      "keyword": "61067225006214",
+      "region": "Республика Кабардино-Балкария"
+    },
+    {
+      "keyword": "propravitelstvokbr",
+      "region": "Республика Кабардино-Балкария"
+    },
+    {
+      "keyword": "zpravitels",
+      "region": "Республика Кабардино-Балкария"
+    },
+    {
+      "keyword": "kuzbass.official",
+      "region": "Кемеровская область (Кузбасс)"
+    },
+    {
+      "keyword": "185515030",
+      "region": "Кемеровская область (Кузбасс)"
+    },
+    {
+      "keyword": "192173260",
+      "region": "Краснодарский край"
+    },
+    {
+      "keyword": "kubangov",
+      "region": "Краснодарский край"
+    },
+    {
+      "keyword": "kuban_gov",
+      "region": "Краснодарский край"
+    },
+    {
+      "keyword": "24699245",
+      "region": "Вологодская область"
+    },
+    {
+      "keyword": "vologda",
+      "region": "Вологодская область"
+    },
+    {
+      "keyword": "govvrn36",
+      "region": "Воронежская область"
+    },
+    {
+      "keyword": "182585808",
+      "region": "Воронежская область"
+    },
+    {
+      "keyword": "gov39",
+      "region": "Калининградская область"
+    },
+    {
+      "keyword": "131174014",
+      "region": "Калининградская область"
+    },
+    {
+      "keyword": "kirovreg43",
+      "region": "Кировская область"
+    },
+    {
+      "keyword": "163630299",
+      "region": "Кировская область"
+    },
+    {
+      "keyword": "kostromoblgov",
+      "region": "Костромская область"
+    },
+    {
+      "keyword": "186602114",
+      "region": "Костромская область"
+    },
+    {
+      "keyword": "lipetskayaoblast",
+      "region": "Липецкая область"
+    },
+    {
+      "keyword": "153660357",
+      "region": "Липецкая область"
+    },
+    {
+      "keyword": "governmentnnov",
+      "region": "Нижегородская область"
+    },
+    {
+      "keyword": "186660393",
+      "region": "Нижегородская область"
+    },
+    {
+      "keyword": "novreg",
+      "region": "Новгородская область"
+    },
+    {
+      "keyword": "64197369",
+      "region": "Новгородская область"
+    },
+    {
+      "keyword": "orelregion_government",
+      "region": "Орловская область"
+    },
+    {
+      "keyword": "orelregion.government",
+      "region": "Орловская область"
+    },
+    {
+      "keyword": "165627373",
+      "region": "Орловская область"
+    },
+    {
+      "keyword": "penzaoblgov",
+      "region": "Пензенская область"
+    },
+    {
+      "keyword": "penzenskayaoblast",
+      "region": "Пензенская область"
+    },
+    {
+      "keyword": "189058660",
+      "region": "Пензенская область"
+    },
+    {
+      "keyword": "pskov.oblast",
+      "region": "Псковская область"
+    },
+    {
+      "keyword": "27131266",
+      "region": "Псковская область"
+    },
+    {
+      "keyword": "adygheya_gov",
+      "region": "Республика Адыгея"
+    },
+    {
+      "keyword": "188917845",
+      "region": "Республика Адыгея"
+    },
+    {
+      "keyword": "adygheyagov",
+      "region": "Республика Адыгея"
+    },
+    {
+      "keyword": "ingushetiagov",
+      "region": "Республика Ингушетия"
+    },
+    {
+      "keyword": "ingushetia_gov",
+      "region": "Республика Ингушетия"
+    },
+    {
+      "keyword": "196533898",
+      "region": "Республика Ингушетия"
+    },
+    {
+      "keyword": "karelia",
+      "region": "Республика Карелия"
+    },
+    {
+      "keyword": "gov_karelia_ru",
+      "region": "Республика Карелия"
+    },
+    {
+      "keyword": "134397408",
+      "region": "Республика Карелия"
+    },
+    {
+      "keyword": "pressrkomi",
+      "region": "Республика Коми"
+    },
+    {
+      "keyword": "48293308",
+      "region": "Республика Коми"
+    },
+    {
+      "keyword": "resptatarstan",
+      "region": "Республика Татарстан"
+    },
+    {
+      "keyword": "tatarstan",
+      "region": "Республика Татарстан"
+    },
+    {
+      "keyword": "179583563",
+      "region": "Республика Татарстан"
+    },
+    {
+      "keyword": "ryazanoblast",
+      "region": "Рязанская область"
+    },
+    {
+      "keyword": "179582396",
+      "region": "Рязанская область"
+    },
+    {
+      "keyword": "smolobl67",
+      "region": "Смоленская область"
+    },
+    {
+      "keyword": "smolensk",
+      "region": "Смоленская область"
+    },
+    {
+      "keyword": "25232455",
+      "region": "Смоленская область"
+    },
+    {
+      "keyword": "stav_region",
+      "region": "Ставропольский край"
+    },
+    {
+      "keyword": "stavregion",
+      "region": "Ставропольский край"
+    },
+    {
+      "keyword": "186824198",
+      "region": "Ставропольский край"
+    },
+    {
+      "keyword": "tambovs",
+      "region": "Тамбовская область"
+    },
+    {
+      "keyword": "tambovgov",
+      "region": "Тамбовская область"
+    },
+    {
+      "keyword": "184751655",
+      "region": "Тамбовская область"
+    },
+    {
+      "keyword": "amuroblofficial",
+      "region": "Амурская область"
+    },
+    {
+      "keyword": "amuroblgov",
+      "region": "Амурская область"
+    },
+    {
+      "keyword": "185652889",
+      "region": "Амурская область"
+    },
+    {
+      "keyword": "eaogov",
+      "region": "ЕАО"
+    },
+    {
+      "keyword": "186616408",
+      "region": "ЕАО"
+    },
+    {
+      "keyword": "zabnewsregion",
+      "region": "Забайкальский край"
+    },
+    {
+      "keyword": "zabregion",
+      "region": "Забайкальский край"
+    },
+    {
+      "keyword": "116754910",
+      "region": "Забайкальский край"
+    },
+    {
+      "keyword": "kamgov41",
+      "region": "Камчатский край"
+    },
+    {
+      "keyword": "197079184",
+      "region": "Камчатский край"
+    },
+    {
+      "keyword": "irkutskgov",
+      "region": "Иркутская область"
+    },
+    {
+      "keyword": "194591749",
+      "region": "Иркутская область"
+    },
+    {
+      "keyword": "kurgan_region",
+      "region": "Курганская область"
+    },
+    {
+      "keyword": "28989304",
+      "region": "Курганская область"
+    },
+    {
+      "keyword": "kurganregion",
+      "region": "Курганская область"
+    },
+    {
+      "keyword": "49gov",
+      "region": "Магаданская область"
+    },
+    {
+      "keyword": "73052391",
+      "region": "Магаданская область"
+    },
+    {
+      "keyword": "government49",
+      "region": "Магаданская область"
+    },
+    {
+      "keyword": "region55",
+      "region": "Омская область"
+    },
+    {
+      "keyword": "live55",
+      "region": "Омская область"
+    },
+    {
+      "keyword": "119696782",
+      "region": "Омская область"
+    },
+    {
+      "keyword": "government56",
+      "region": "Оренбургская область"
+    },
+    {
+      "keyword": "173310605",
+      "region": "Оренбургская область"
+    },
+    {
+      "keyword": "permkrai20",
+      "region": "Пермский край"
+    },
+    {
+      "keyword": "permskykray",
+      "region": "Пермский край"
+    },
+    {
+      "keyword": "143106820",
+      "region": "Пермский край"
+    },
+    {
+      "keyword": "buryatiaofficial",
+      "region": "Республика Бурятия"
+    },
+    {
+      "keyword": "75580809",
+      "region": "Республика Бурятия"
+    },
+    {
+      "keyword": "sakhagov",
+      "region": "Республика Саха (Якутия)"
+    },
+    {
+      "keyword": "187580720",
+      "region": "Республика Саха (Якутия)"
+    },
+    {
+      "keyword": "rtyva",
+      "region": "Республика Тыва"
+    },
+    {
+      "keyword": "sakhalingovernment",
+      "region": "Сахалинская область"
+    },
+    {
+      "keyword": "160357121",
+      "region": "Сахалинская область"
+    },
+    {
+      "keyword": "svo196",
+      "region": "Свердловская область"
+    },
+    {
+      "keyword": "146815974",
+      "region": "Свердловская область"
+    },
+    {
+      "keyword": "khabkrai",
+      "region": "Хабаровский край"
+    },
+    {
+      "keyword": "177874213",
+      "region": "Хабаровский край"
+    },
+    {
+      "keyword": "shtabugra",
+      "region": "ХМАО - Югра"
+    },
+    {
+      "keyword": "yugraonline",
+      "region": "ХМАО - Югра"
+    },
+    {
+      "keyword": "134579208",
+      "region": "ХМАО - Югра"
+    },
+    {
+      "keyword": "chukotkagov",
+      "region": "Чукотский АО"
+    },
+    {
+      "keyword": "189555962",
+      "region": "Чукотский АО"
+    },
+    {
+      "keyword": "yanao_ru",
+      "region": "ЯНАО"
+    },
+    {
+      "keyword": "170441641",
+      "region": "ЯНАО"
+    },
+    {
+      "keyword": "yanao",
+      "region": "ЯНАО"
+    },
+    {
+      "keyword": "altairepublic04",
+      "region": "Республика Алтай"
+    },
+    {
+      "keyword": "128227199",
+      "region": "Республика Алтай"
+    },
+    {
+      "keyword": "gov_cap_ru",
+      "region": "Чувашская республика"
+    },
+    {
+      "keyword": "142632677",
+      "region": "Чувашская республика"
+    },
+    {
+      "keyword": "govcapru",
+      "region": "Чувашская республика"
+    },
+    {
+      "keyword": "officialmordovia",
+      "region": "Республика Мордовия"
+    },
+    {
+      "keyword": "98502372",
+      "region": "Республика Мордовия"
+    },
+    {
+      "keyword": "krasnoyarskkr",
+      "region": "Красноярский край"
+    },
+    {
+      "keyword": "196936695",
+      "region": "Красноярский край"
+    },
+    {
+      "keyword": "70000002964656",
+      "region": "ЛНР"
+    },
+    {
+      "keyword": "lnr_official",
+      "region": "ЛНР"
+    },
+    {
+      "keyword": "221342131",
+      "region": "ЛНР"
+    },
+    {
+      "keyword": "samaroblast",
+      "region": "Самарская область"
+    },
+    {
+      "keyword": "116930",
+      "region": "Самарская область"
+    },
+    {
+      "keyword": "saratovskayaobl",
+      "region": "Саратовская область"
+    },
+    {
+      "keyword": "185085820",
+      "region": "Саратовская область"
+    },
+    {
+      "keyword": "saratovoblgov",
+      "region": "Саратовская область"
+    },
+    {
+      "keyword": "tomskobl",
+      "region": "Томская область"
+    },
+    {
+      "keyword": "124088845",
+      "region": "Томская область"
+    },
+    {
+      "keyword": "tomskgov",
+      "region": "Томская область"
+    },
+    {
+      "keyword": "udmurt_gov",
+      "region": "Удмуртская республика"
+    },
+    {
+      "keyword": "udmurtgov",
+      "region": "Удмуртская республика"
+    },
+    {
+      "keyword": "192431671",
+      "region": "Удмуртская республика"
+    },
+    {
+      "keyword": "ulsk173",
+      "region": "Ульяновская область"
+    },
+    {
+      "keyword": "ul",
+      "region": "Ульяновская область"
+    },
+    {
+      "keyword": "41682535",
+      "region": "Ульяновская область"
+    },
+    {
+      "keyword": "khersonoblastadm",
+      "region": "Херсонская область"
+    },
+    {
+      "keyword": "khersonoblast_adm",
+      "region": "Херсонская область"
+    },
+    {
+      "keyword": "214129347",
+      "region": "Херсонская область"
+    },
+    {
+      "keyword": "sevgovru",
+      "region": "г. Севастополь"
+    },
+    {
+      "keyword": "126326014",
+      "region": "г. Севастополь"
+    },
+    {
+      "keyword": "pravitelstvo_lenobl",
+      "region": "Ленинградская область"
+    },
+    {
+      "keyword": "pravitelstvo47",
+      "region": "Ленинградская область"
+    },
+    {
+      "keyword": "168391573",
+      "region": "Ленинградская область"
+    },
+    {
+      "keyword": "murmangov",
+      "region": "Мурманская область"
+    },
+    {
+      "keyword": "58526320820230",
+      "region": "Мурманская область"
+    },
+    {
+      "keyword": "murman_sever",
+      "region": "Мурманская область"
+    },
+    {
+      "keyword": "120229555",
+      "region": "Мурманская область"
+    },
+    {
+      "keyword": "okrugodnakomanda",
+      "region": "Ненецкий АО"
+    },
+    {
+      "keyword": "129747883",
+      "region": "Ненецкий АО"
+    },
+    {
+      "keyword": "newnao",
+      "region": "Ненецкий АО"
+    },
+    {
+      "keyword": "krym_respublika",
+      "region": "Республика Крым"
+    },
+    {
+      "keyword": "krym.respublika",
+      "region": "Республика Крым"
+    },
+    {
+      "keyword": "69592478",
+      "region": "Республика Крым"
+    },
+    {
+      "keyword": "spb",
+      "region": "г. Санкт-Петербург"
+    },
+    {
+      "keyword": "spbgov",
+      "region": "г. Санкт-Петербург"
+    },
+    {
+      "keyword": "25882042",
+      "region": "г. Санкт-Петербург"
+    },
+    {
+      "keyword": "arkhangelsk_reg",
+      "region": "Архангельская область"
+    },
+    {
+      "keyword": "karachaev",
+      "region": "Карачаево-Черкесская Республика"
+    },
+    {
+      "keyword": "pravitelstvo_kchr",
+      "region": "Карачаево-Черкесская Республика"
+    },
+    {
+      "keyword": "191749079",
+      "region": "Карачаево-Черкесская Республика"
+    },
+    {
+      "keyword": "respublica_dagestan",
+      "region": "Республика Дагестан"
+    },
+    {
+      "keyword": "respublica.dagestan",
+      "region": "Республика Дагестан"
+    },
+    {
+      "keyword": "202956420",
+      "region": "Республика Дагестан"
+    },
+    {
+      "keyword": "kalmregionru",
+      "region": "Республика Калмыкия"
+    },
+    {
+      "keyword": "group53675142873175",
+      "region": "Республика Калмыкия"
+    },
+    {
+      "keyword": "145851687",
+      "region": "Республика Калмыкия"
+    },
+    {
+      "keyword": "govrme",
+      "region": "Республика Марий Эл"
+    },
+    {
+      "keyword": "184747000",
+      "region": "Республика Марий Эл"
+    },
+    {
+      "keyword": "alania_gov_ru",
+      "region": "Республика Северная Осетия - Алания"
+    },
+    {
+      "keyword": "60747548393639",
+      "region": "Республика Северная Осетия - Алания"
+    },
+    {
+      "keyword": "203491685",
+      "region": "Республика Северная Осетия - Алания"
+    },
+    {
+      "keyword": "tverreg",
+      "region": "Тверская область"
+    },
+    {
+      "keyword": "135894105",
+      "region": "Тверская область"
+    },
+    {
+      "keyword": "yaroslavskaiaoblast",
+      "region": "Ярославская область"
+    },
+    {
+      "keyword": "yarregion",
+      "region": "Ярославская область"
+    },
+    {
+      "keyword": "186182760",
+      "region": "Ярославская область"
+    }
+  ]
+}
