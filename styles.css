@@ -74,7 +74,7 @@ select {
     margin-bottom: 20px;
     border: 1px solid #33334d;
     background-color: #33334d;
-    color: #ffffff;
+    color: #000000;
     border-radius: 5px;
     box-sizing: border-box;
     -webkit-appearance: none; /* Removes default styling on iOS */
@@ -121,4 +121,38 @@ select {
     pointer-events: none; /* Стрелка не будет взаимодействовать с курсором */
     color: #ffffff; /* Цвет стрелки */
 }
+
+/* Стили для основного контейнера select2 */
+.select2-container--default .select2-selection--single {
+    background-color: #33334d; /* Темно-серый фон */
+    color: white; /* Белый текст */
+    border-color: #33334d; /* Темно-серый бордюр */
+}
+
+/* Стили для текста внутри select2 */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: white; /* Белый текст */
+}
+
+/* Стили для опций в выпадающем списке select2 */
+.select2-container--default .select2-results__option {
+    background-color: #33334d; /* Темно-серый фон */
+    color: white; /* Белый текст */
+}
+
+/* Стили для поля поиска внутри select2 */
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    color: white; /* Белый текст */
+    background-color: #33334d; /* Темно-серый фон */
+}
+
+/* Стили для выбранного элемента в select2 */
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #33334d; /* Темно-серый фон для выделенного элемента */
+    color: white; /* Белый текст для выделенного элемента */
+}
+
+
+
+
 
