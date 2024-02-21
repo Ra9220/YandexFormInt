@@ -4,13 +4,16 @@ const bodyParser = require('body-parser');
 const { google } = require('googleapis');
 const morgan = require('morgan');
 const path = require('path');
+const fs = require('fs'); // Добавляем модуль для работы с файловой системой
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(morgan('combined'));
 
-// Маршрут для обработки GET запросов на /styles.css
+// Загружаем keywords.json
+const keywordsData = JSON.parse(fs.readFileSync('keywords.json', 'utf8')); // Изменено на динамическую загрузку
+
 app.get('/styles.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'styles.css'), {
         headers: {
@@ -19,7 +22,6 @@ app.get('/styles.css', (req, res) => {
     });
 });
 
-// Маршрут для обработки GET запросов на /data.js
 app.get('/data.js', (req, res) => {
     res.sendFile(path.join(__dirname, 'data.js'), {
         headers: {
@@ -28,7 +30,6 @@ app.get('/data.js', (req, res) => {
     });
 });
 
-// Маршрут для обработки GET запросов на /data.json
 app.get('/data.json', (req, res) => {
     res.sendFile(path.join(__dirname, 'data.json'), {
         headers: {
@@ -50,49 +51,37 @@ async function addFormDataToSheet(formData) {
         const spreadsheetId = process.env.SPREADSHEET_ID;
         const range = `${process.env.SHEET_NAME}!A2:I`;
 
-        const decodedFormData = {};
-        for (const [key, value] of Object.entries(formData)) {
-            decodedFormData[key] = typeof value === 'string' ? decodeURIComponent(JSON.parse('"' + value.replace(/\"/g, '\\"') + '"')) : value;
+        // Преобразование данных формы с учетом keywords.json
+        if (formData.url) {
+            const keywordEntry = keywordsData.keywords.find(entry => formData.url.includes(entry.keyword));
+            if (keywordEntry) {
+                formData.region = keywordEntry.region; // Обновляем регион на основе найденного совпадения
+            }
         }
 
         await googleSheets.spreadsheets.values.append({
             spreadsheetId,
             range,
             valueInputOption: "USER_ENTERED",
-            resource: { values: [Object.values(decodedFormData)] },
+            resource: { values: [Object.values(formData)] },
         });
 
-        console.log('Data successfully added to Google Sheets:', decodedFormData);
+        console.log('Data successfully added to Google Sheets:', formData);
     } catch (error) {
         console.error('Error adding data to Google Sheets:', error);
         throw error;
     }
 }
 
-function decodeUnicodeParams(params) {
-    const decodedParams = {};
-    for (const [key, value] of Object.entries(params)) {
-        if (typeof value === 'string') {
-            decodedParams[key] = decodeURIComponent(JSON.parse('"' + value.replace(/\"/g, '\\"') + '"'));
-        } else {
-            decodedParams[key] = value;
-        }
-    }
-    return decodedParams;
-}
-
-// Маршрут для обработки GET запросов на /submit
 app.get('/submit', (req, res) => {
-    // Отправляем HTML страницу с формой
     res.sendFile(path.join(__dirname, 'data.html'));
 });
 
-// Маршрут для обработки POST запросов на /submit
 app.post('/submit', async (req, res) => {
     try {
-        const decodedParams = decodeUnicodeParams(req.body.params);
-        console.log('Received data from Yandex Form:', decodedParams);
-        await addFormDataToSheet(decodedParams);
+        // Предполагаем, что данные уже декодированы
+        console.log('Received data from form:', req.body.params);
+        await addFormDataToSheet(req.body.params);
         res.status(200).send('Data added to Google Sheets successfully');
     } catch (error) {
         console.error('Failed to add data to Google Sheets:', error);
