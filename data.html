@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <!-- Подключаем jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Подключаем Select2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<form id="dataForm">
+    <label for="region">Region:</label>
+    <select id="region" name="region"></select>
+    <br><br>
+    <label for="url">URL:</label>
+    <input type="text" id="url" name="url">
+    <br><br>
+    <label for="format">Format:</label>
+    <select id="format" name="format"></select>
+    <br><br>
+    <label for="topic">Topic:</label>
+    <select id="topic" name="topic"></select>
+    <br><br>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date">
+    <br><br>
+    <label for="content">Content:</label>
+    <select id="content" name="content"></select>
+    <br><br>
+    <button type="button" onclick="submitForm()">Submit</button>
+</form>
+
+<script src="data.js"></script>
+</body>
+</html>

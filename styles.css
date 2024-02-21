@@ -1,0 +1,124 @@
+/* styles.css */
+
+/* Body style */
+body {
+    background-color: #1f1f2e; /* Dark background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Assuming Arial, adjust as needed */
+    color: #ffffff; /* Light text for visibility on the dark background */
+}
+
+/* Form container style */
+#dataForm {
+    background-color: #252540; /* Darker background for the form */
+    padding: 40px; /* Adjust padding to match the design */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 500px; /* Fixed width, adjust as needed */
+}
+
+/* Label styles */
+label {
+    display: block;
+    font-weight: normal; /* Normal weight looks closer to the image */
+    margin-bottom: 20px; /* Increased space below labels */
+    color: #ffffff; /* Light color for the labels */
+}
+
+/* Input and Textarea styles */
+input[type="text"],
+input[type="url"], /* Added type="url" to match your form */
+input[type="date"],
+textarea {
+    width: 100%; /* Full width of the parent container */
+    padding: 15px; /* Larger padding for better aesthetics */
+    margin-bottom: 20px; /* Increased space below inputs */
+    border: 1px solid #33334d; /* Darker border color */
+    background-color: #33334d; /* Dark input backgrounds */
+    color: #ffffff; /* Light text for visibility */
+    border-radius: 5px; /* Rounded corners for inputs */
+    box-sizing: border-box;
+}
+
+/* Adjusted the placeholder color */
+input::placeholder,
+textarea::placeholder {
+    color: #55556a;
+}
+
+/* Button styles */
+button {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 15px 30px; /* Larger padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Space above the button */
+    width: 100%; /* Full width button */
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* This is for the select dropdowns to match the styling */
+select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #33334d;
+    background-color: #33334d;
+    color: #ffffff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    -webkit-appearance: none; /* Removes default styling on iOS */
+    -moz-appearance: none; /* Removes default styling on Firefox */
+    appearance: none;
+}
+
+/* You may need to include custom arrow for select elements */
+.select-arrow {
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 3px);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #ffffff;
+    pointer-events: none;
+}
+
+/* Стили для стрелки выпадающего списка */
+select {
+    -webkit-appearance: none; /* Убираем стандартную стрелку */
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); /* Стрелка белого цвета */
+    background-position: right 15px top 50%, 0 0; /* Позиция стрелки */
+    background-repeat: no-repeat; /* Не повторяем изображение */
+    background-size: 12px; /* Размер стрелки */
+    cursor: pointer; /* Изменение курсора */
+}
+
+/* Стили для псевдоэлемента обертки select для кастомизации стрелки */
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper:after {
+    content: '▼'; /* Добавляем символ стрелки */
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Стрелка не будет взаимодействовать с курсором */
+    color: #ffffff; /* Цвет стрелки */
+}
+
