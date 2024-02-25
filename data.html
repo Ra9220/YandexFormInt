@@ -11,26 +11,35 @@
 </head>
 <body>
 <form id="dataForm">
-    <label for="region">Region:</label>
+    <label for="region">Регион (не выбирать):</label>
     <select id="region" name="region" class="select2"></select>
     <br><br>
     <label for="url">URL:</label>
     <input type="text" id="url" name="url">
     <br><br>
-    <label for="format">Format:</label>
+    <label for="format">Формат:</label>
     <select id="format" name="format" class="select2"></select>
     <br><br>
-    <label for="topic">Topic:</label>
+    <label for="topic">Тема:</label>
     <select id="topic" name="topic" class="select2"></select>
     <br><br>
-    <label for="date">Date:</label>
+    <label for="date">Дата публикации:</label>
     <input type="date" id="date" name="date">
     <br><br>
-    <label for="content">Content:</label>
+    <label for="content">Наш контент?:</label>
     <select id="content" name="content" class="select2"></select>
     <br><br>
     <button type="button" onclick="submitForm()">Submit</button>
 </form>
+
+<!-- Всплывающее окно -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <p>Данные успешно отправлены!</p>
+    </div>
+</div>
+
 <script src="data.js"></script>
 </body>
 </html>
